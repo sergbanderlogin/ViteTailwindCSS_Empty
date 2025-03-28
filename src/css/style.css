@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+.container {
+    max-width: 1560px;
+    margin: 0 auto;
+}
+
+.item .activeIcon {
+    @apply hidden;
+}
+
+.item.active .inactiveIcon {
+    @apply hidden;
+}
+
+.item.active .activeIcon {
+    @apply block;
+}
+
+.item:not(.active) .content {
+    @apply h-0 overflow-hidden py-0;
+}
+
+.item .content {
+    @apply p-8 h-[300px];
+}
