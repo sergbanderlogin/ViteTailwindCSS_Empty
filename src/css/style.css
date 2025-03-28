@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+    --animate-fadein: fadein .3s ease-in-out;
+    @keyframes fadein {
+        from {
+            opacity: 0
+        }
+        to {
+            opacity: 1
+        }
+    }
+}
+
 .container {
     max-width: 1560px;
     margin: 0 auto;
@@ -24,3 +36,12 @@
 .item .content {
     @apply p-8 h-[300px];
 }
+
+.accordion-item.active > .accordion-content {
+    @apply block;
+}
+
+.accordion-item.active .accordion-img {
+    @apply rotate-180;
+}
+
