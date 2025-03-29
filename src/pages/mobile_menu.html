@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="../vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Mobile_Menu</title>
+</head>
+<body class="bg-sky-200">
+<header class="sticky top-0 z-10 bg-teal-700 text-white">
+        <section class="mx-auto flex max-w-4xl items-center justify-between p-4">
+            <h1 class="text-3xl font-medium">
+                <a href="#">Your Logo</a>
+            </h1>
+            <div>
+                <div id="hamburger-button" class="relative h-8 w-8 cursor-pointer text-3xl md:hidden">
+                    <!-- &#9776; -->
+                    <div
+                            class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-0 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-0 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']">
+                    </div>
+                </div>
+                <nav class="hidden space-x-8 text-xl md:block" aria-label="main">
+                    <a href="#home" class="hover:opacity-90">Home</a>
+                    <a href="#product" class="hover:opacity-90">Product</a>
+                    <a href="#about" class="hover:opacity-90">About Us</a>
+                    <a href="#contact" class="hover:opacity-90">Contact</a>
+                    <a href="#gallery" class="hover:opacity-90">Gallery</a>
+                </nav>
+            </div>
+        </section>
+        <section id="mobile-menu"
+                 class="top-18 justify-center absolute hidden w-full origin-top animate-open-menu flex-col bg-black/90 text-5xl">
+            <!-- <button class="text-8xl self-end px-6">
+                      &times;
+                  </button> -->
+            <nav class="flex min-h-screen flex-col items-center py-8" aria-label="mobile">
+                <a href="#home" class="w-full py-6 text-center hover:opacity-90">Home</a>
+                <a href="#product" class="w-full py-6 text-center hover:opacity-90">Product</a>
+                <a href="#about" class="w-full py-6 text-center hover:opacity-90">About Us</a>
+                <a href="#contact" class="w-full py-6 text-center hover:opacity-90">Contact</a>
+                <a href="#gallery" class="w-full py-6 text-center hover:opacity-90">Gallery</a>
+            </nav>
+        </section>
+</header>
+<main class="text-8xl text-white">
+    <section id="home" class="h-[480px] bg-amber-950 flex justify-center items-center widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6">Hero</section>
+    <section id="product" class="h-[480px] bg-orange-700 flex justify-center items-center widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6">Product</section>
+    <section id="about" class="h-[480px] bg-emerald-600 flex justify-center items-center">About US</section>
+    <section id="contact" class="h-[480px] bg-purple-700 flex justify-center items-center widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6">Contact</section>
+    <section id="gallery" class="h-[480px] bg-accent flex justify-center items-center widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6">Gallery</section>
+</main>
+
+<footer class="text-8xl text-white h-[480px] bg-secondary flex justify-center items-center">Footer</footer>
+
+<script type="module" src="../js/main.js"></script>
+</body>
+</html>

@@ -1,6 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import "tailwindcss";
 
+:root {
+    /*color-scheme: light dark;*/
+    --my-font: "DM Serif Display", "serif";
+    --my-font-text: "Plus Jakarta Sans", "sans-serif";
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+.font-serif {
+    font-family: "DM Serif Display", "serif";
+}
+
+.font-sans {
+    font-family: "Plus Jakarta Sans", "sans-serif";
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0 solid;
+    }
+}
+
 @theme {
+    --color-blueviolet: #5027B5;
+    --color-beige: #F5F5DC;
+    --color-accent: #FFA500;
+    --color-secondary: #2C2C2C;
+
     --animate-fadein: fadein .3s ease-in-out;
     @keyframes fadein {
         from {
@@ -17,24 +56,38 @@
     margin: 0 auto;
 }
 
-.item .activeIcon {
-    @apply hidden;
+@layer utilities {
+    .section-min-height {
+        min-height: calc(100vh - 68px)
+    }
+
+    .toggle-btn {
+        @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
+    }
 }
 
-.item.active .inactiveIcon {
-    @apply hidden;
-}
+@layer components {
+    .item .activeIcon {
+        @apply hidden;
+    }
 
-.item.active .activeIcon {
-    @apply block;
-}
+    .item.active .inactiveIcon {
+        @apply hidden;
+    }
 
-.item:not(.active) .content {
-    @apply h-0 overflow-hidden py-0;
-}
+    .item.active .activeIcon {
+        @apply block;
+    }
 
-.item .content {
-    @apply p-8 h-[300px];
+    .item:not(.active) .content {
+        @apply h-0 overflow-hidden py-0;
+    }
+
+    .item .content {
+        @apply p-8 h-[300px];
+    }
+
+
 }
 
 .accordion-item.active > .accordion-content {
@@ -44,4 +97,5 @@
 .accordion-item.active .accordion-img {
     @apply rotate-180;
 }
+
 
