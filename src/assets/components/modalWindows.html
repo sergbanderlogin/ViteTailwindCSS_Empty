@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Modal_Windows_Pop-Up</title>
+</head>
+<body>
+<div class="wrapper  min-h-screen grid grid-rows-[auto,1fr,auto]">
+    <h1 class="text-4xl text-purple-700 text-center text-bold">Модальні вікна та Pop-Up</h1>
+
+    <div class="container mx-auto">
+
+        <section class="section my-5 flex flex-col justify-center items-center min-h-[160px] bg-sky-500" id="first">
+            <h1 class="section__title text-neutral-700 text-center text-3xl pb-4">Модальне вікно №1</h1>
+            <button class="section__button section__button-one bg-transparent text-white font-bold border-2 border-solid rounded-md py-2 px-5 cursor-pointer hover:bg-green-400 hover:text-orange-700 hover:border-red-700 hover:outline-2 hover:outline-offset-2 hover:outline-purple-500 transition-all delay-150 duration-300 ease-linear">
+                Відкрити модальне вікно №1
+            </button>
+        </section>
+
+        <section class="section my-5 text-center flex flex-col justify-center items-center min-h-[160px] bg-emerald-200"
+                 id="second">
+            <h1 class="section__title text-neutral-700 text-center text-3xl pb-4">Модальне вікно №2</h1>
+            <button class="section__button section__button-two bg-transparent text-neutral-600 font-bold border-2 border-solid rounded-md py-2 px-5 cursor-pointer hover:bg-green-400 hover:text-orange-700 hover:border-red-700 hover:outline-2 hover:outline-offset-2 hover:outline-purple-500 transition-all delay-150 duration-300 ease-linear">
+                Відкрити модальне вікно №2
+            </button>
+        </section>
+
+        <section class="section my-5 text-center flex flex-col justify-center items-center min-h-[160px] bg-fuchsia-200"
+                 id="modal-form">
+            <h1 class="section__title text-neutral-700 text-center text-3xl pb-4">Модальне вікно Form</h1>
+            <button class="section__button section__button-form bg-transparent text-neutral-600 font-bold border-2 border-solid rounded-md py-2 px-5 cursor-pointer hover:bg-green-400 hover:text-orange-700 hover:border-red-700 hover:outline-2 hover:outline-offset-2 hover:outline-purple-500 transition-all delay-150 duration-300 ease-linear ">
+                Відкрити модальне вікно Form
+            </button>
+        </section>
+
+        <section class="section content__section content__section_row flex bg-amber-100 p-6">
+            <div class="content__body grow shrink basis-50% px-5">
+                <h1 class="content__title text-4xl mb-2">Відкриття модальних вікон за посиланням.</h1>
+                <div class="content__text text-[20px]">
+                    <a href="#popup"
+                       class="section__button section__button-other-one popup-link text-red-600 font-bold"><span
+                            class="text-neutral-600">Посилання на</span> PopUp №1</a>
+                    <p>Хочемо дивувати домашніх улюбленців якістю неперервної інтеграції та прагнемо розвивати послуги
+                        доставлення кореспонденції, передачу даних і виготовлення ключів разом із замовниками.</p>
+                    <p>Постійне поліпшення, робітнича майстерність, синергетичне поєднання та збільшення асортименту
+                        товарів забезпечили компанії успіх і провідну роль на світовому ринку.</p>
+                    <a href="#popup_2"
+                       class="section__button section__button-other-two popup-link text-red-600 font-bold text-xl"><span
+                            class="text-neutral-600">Посилання на</span> PopUp №2</a>
+                    <p>На постійній основі компанія використовує універсальні приємні технології інновацій, відкриттів
+                        та глобального громадянства. Наша мета проста: це надання вам бізнесу, новаторства та
+                        накопичення. </p>
+                    <a href="#image"
+                       class="section__button section__button-other-image popup-link text-red-600 font-bold text-xl">Переглянути
+                        зображення</a>
+                    <p>Ми впевнені, що впровадження харчових продуктів (комп'ютерні ціни) життєво необхідне для
+                        розвитку, тому ми постійно виконуємо зобов'язання та разом з тим, відкриті до зберігання даних.
+                    </p>
+                    <p>По цьому постланню можна
+                        <a href="#modal-form-open"
+                           class="section__button section__button-form-open popup-link text-red-600 font-bold text-xl">відкрити
+                            модальне вікно з формою</a>
+                    </p>
+                </div>
+            </div>
+            <a href="#image"
+               class="content_image popup-link block grow shrink basis-50% section__button section__button-other-image">
+                <img class="max-w-full" src="img/scene-primary.webp" alt="image">
+            </a>
+        </section>
+
+        <!-- Модальне вікно №1 -->
+        <div class="modal modal-one fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-y-auto hidden transition-all delay-150 duration-300 ease-linear">
+            <div class="modal__main relative max-w-[700px] h-[360px] bg-white mx-auto text-black border-4 border-solid border-amber-500 rounded-2xl py-7 px-12 cursor-default">
+                <h2 class="modal__title text-6xl mb-7">Модальне вікно №1</h2>
+
+                <div class="modal__container text-2xl">
+                    <p>Тестування модальних вікон</p>
+                    <p>Для всякої потреби, та використання в різних місцях</p>
+                </div>
+
+                <button class="modal__btn text-3xl m-8 px-8 py-4 bg-red-500 text-white text-center block mx-auto rounded-2xl cursor-pointer">
+                    Вкажіть те що Вам потрібно
+                </button>
+                <button class="group modal__close">
+                    <svg
+                            id="modal-close-btn"
+                            class="absolute top-3 right-3 h-7 w-7 text-red-700 fill-red-700 cursor-pointer"
+                            viewBox="0 0 28 28"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                                class="fill-black cursor-pointer transition-colors group-hover:fill-[#EE7828]"
+                                d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Кінець модального вікна №1 -->
+
+        <!-- Модальне вікно №2 -->
+        <div class="modal modal-two fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-y-auto hidden">
+            <div class="modal__main relative max-w-[700px] h-[460px] bg-white mx-auto text-black border-4 border-solid border-amber-500 rounded-2xl py-7 px-12 cursor-default">
+                <h2 class="modal__title text-6xl mb-7">Модальне вікно №2</h2>
+
+                <div class="modal__container text-2xl">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum doloremque unde
+                        perferendis.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea accusantium aperiam, quis commodi
+                        incidunt amet quidem vero ut possimus sed veniam aliquam eum, in porro consequuntur impedit
+                        deserunt sequi velit quisquam quod suscipit. Consequuntur, facere earum, iusto sit odit aperiam
+                        ipsam illo architecto autem esse eos eius maiores quam magnam?</p>
+                </div>
+
+                <button class="group modal__close">
+                    <svg
+                            id="modal-close-btn"
+                            class="absolute top-3 right-3 h-7 w-7 text-red-700 fill-red-700 cursor-pointer"
+                            viewBox="0 0 28 28"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                                class="fill-black cursor-pointer transition-colors group-hover:fill-[#EE7828]"
+                                d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Кінець модального вікна №2 -->
+
+        <!-- Modals Form -->
+        <div class="modals">
+            <!-- [START] HTML Modal Form -->
+            <div>
+                <div
+                        id="modal"
+                        class="modal modal-form fixed inset-0 text-center bg-black/90 cursor-pointer p-8 overflow-y-auto hidden"
+                >
+                    <!-- Modal Замовити консультацію -->
+                    <div class="modal__main relative rounded-md bg-white h-[580px] w-[420px] mx-auto mt-40 pt-3">
+                        <form class="max-w-sm mx-auto mt-10">
+                            <label
+                                    for="modal-form-user"
+                                    class="block mb-2 text-sm font-medium text-gray-900 "
+                            >Username</label
+                            >
+                            <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                    >
+                      <path
+                              d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"
+                      />
+                    </svg>
+                  </span>
+                                <input
+                                        type="text"
+                                        required
+                                        id="modal-form-user"
+                                        class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Enter Your Name"
+                                >
+                            </div>
+
+                            <label
+                                    for="modal-form-phone-number"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Your phone</label
+                            >
+                            <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                    >
+                      <path
+                              fill-rule="evenodd"
+                              d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4Zm12 12V5H7v11h10Zm-5 1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                              clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+
+                                <input
+                                        type="text"
+                                        required
+                                        id="modal-form-phone-number"
+                                        class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Enter Your phone-number"
+                                >
+                            </div>
+
+                            <label
+                                    for="modal-form-email"
+                                    class="block mb-2 text-sm font-medium text-gray-900 "
+                            >Your Email</label
+                            >
+                            <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 16"
+                    >
+                      <path
+                              d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                      />
+                      <path
+                              d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                      />
+                    </svg>
+                  </span>
+                                <input
+                                        type="text"
+                                        required
+                                        id="modal-form-email"
+                                        class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Enter Your Email"
+                                >
+                            </div>
+
+                            <label
+                                    for="modal-form-products"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
+                            >Select your product</label
+                            >
+                            <select
+                                    id="modal-form-products"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            >
+                                <option class="text-[20px]" value="Виберіть продукцію:">
+                                    Виберіть продукцію:
+                                </option>
+                                <option class="text-[20px]" value="МАРКІЗИ">МАРКІЗИ</option>
+                                <option
+                                        class="text-[20px]"
+                                        value="&nbsp;&nbsp;Ліктьова маркіза (горизонтальна)"
+                                >
+                                    &nbsp;&nbsp;Ліктьова маркіза (горизонтальна)
+                                </option>
+                                <option
+                                        class="text-[20px]"
+                                        value="&nbsp;&nbsp;Балконна маркіза"
+                                >
+                                    &nbsp;&nbsp;Балконна маркіза
+                                </option>
+                                <option
+                                        class="text-[20px]"
+                                        value="&nbsp;&nbsp;Коробова маркіза"
+                                >
+                                    &nbsp;&nbsp;Коробова маркіза
+                                </option>
+                                <option
+                                        class="text-[20px]"
+                                        value="&nbsp;&nbsp;Терасна маркіза"
+                                >
+                                    &nbsp;&nbsp;Терасна маркіза
+                                </option>
+                                <option
+                                        class="text-[20px]"
+                                        value="&nbsp;&nbsp;Вертикальна маркіза"
+                                >
+                                    &nbsp;&nbsp;Вертикальна маркіза
+                                </option>
+                                <option
+                                        class="text-[20px]"
+                                        value="&nbsp;&nbsp;Двосторонні маркізи"
+                                >
+                                    &nbsp;&nbsp;Двосторонні маркізи
+                                </option>
+                                <option class="text-[20px]" value="М’ЯКІ ВІКНА">
+                                    М’ЯКІ ВІКНА
+                                </option>
+
+                                <option class="text-[20px]" value="РЕФЛЕКСОЛІ">
+                                    РЕФЛЕКСОЛІ
+                                </option>
+
+                                <option class="text-[20px]" value="ТЕНТИ І НАВІСИ">
+                                    ТЕНТИ І НАВІСИ
+                                </option>
+                                <option class="text-[20px]" value="МЕТАЛІЧНІ КОНСТРУКЦІЇ">
+                                    МЕТАЛІЧНІ КОНСТРУКЦІЇ
+                                </option>
+                                <option class="text-[20px]" value="ТЕРАСНА ДОШКА ДПК">
+                                    ТЕРАСНА ДОШКА ДПК
+                                </option>
+
+                            </select>
+
+                            <label
+                                    for="modal-form-message"
+                                    class="block mb-2 text-sm font-medium text-gray-900 "
+                            >Your message</label
+                            >
+                            <textarea
+                                    id="modal-form-message"
+                                    rows="4"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Leave a comment..."
+                            ></textarea>
+                            <div>
+                                <input type="submit" value="Відправити"
+                                       class="btn btn-accent mx-auto mt-6 p-4 w-full xl:mx-0 text-white"
+                                       name="send">
+                            </div>
+                        </form>
+                        <!-- Close Btn -->
+                        <button class="group modal__close">
+                            <svg
+                                    id="modal-close-btn"
+                                    class="absolute top-3 right-3 h-7 w-7 text-red-700 fill-red-700 cursor-pointer"
+                                    viewBox="0 0 28 28"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        class="fill-black cursor-pointer transition-colors group-hover:fill-[#EE7828]"
+                                        d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!--[END] Modal Замовити консультацію -->
+
+            </div>
+            <!-- [END] HTML Modal -->
+        </div>
+        <!-- [END] Modals -->
+
+        <!-- Блок з модальними вікнами з посиланнями на інші модальні вікна та посилання на зображення -->
+        <div id="popup"
+             class="modal modal-other-one popup  fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-y-auto hidden transition-all duration-500 ease-in">
+            <!--    <a href="#header" class="popup__area"></a>-->
+            <div class="popup__body min-h-full mx-auto flex items-center justify-center py-7 px-3 transition-all duration-800 ease-out delay-0">
+                <div class="modal__main popup__content relative bg-white color-black w-[800px] p-7">
+                    <button class="group modal__close">
+                        <svg
+                                id="modal-close-btn"
+                                class="absolute top-3 right-3 h-7 w-7 text-red-700 fill-red-700 cursor-pointer"
+                                viewBox="0 0 28 28"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    class="fill-black cursor-pointer transition-colors group-hover:fill-[#EE7828]"
+                                    d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                            />
+                        </svg>
+                    </button>
+                    <div class="popup__title text-3xl font-bold text-center mb-1">Це модальне вікно №1</div>
+                    <div class="popup__text text-xl">
+                        <a href="#popup_2" class="section__button-other-two popup-link text-red-700 font-bold">Попап
+                            №2</a>
+                        <p>
+                            Наша мета проста: це забезпечення вам харчовими продуктами, неперервної інтеграції та
+                            глобального громадянства.
+                        </p>
+                        <a href="#image" class="section__button-other-image popup-link text-red-700 font-bold">Переглянути
+                            зображення</a>
+                        <p>
+                            Систематичне поліпшення, досвідченість злагодженої команди, управлінська вправність та
+                            збільшення рівня капіталізації забезпечили підприємству успіх і провідну роль на ринку
+                            України. У своїй діяльності підприємство застосовує універсальні сучасні технології бізнесу,
+                            відкриттів та інновацій.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="popup_2"
+             class="modal modal-other-two popup fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-y-auto hidden transition-all duration-500 ease-in">
+            <!--    <a href="#header" class="popup__area"></a>-->
+            <div class="popup__body min-h-full mx-auto flex items-center justify-center py-7 px-3 transition-all duration-800 ease-out delay-0">
+                <div class="modal__main popup__content relative bg-white color-black w-[800px] p-7">
+                    <button class="group modal__close">
+                        <svg
+                                id="modal-close-btn"
+                                class="absolute top-3 right-3 h-7 w-7 text-red-700 fill-red-700 cursor-pointer"
+                                viewBox="0 0 28 28"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    class="fill-black cursor-pointer transition-colors group-hover:fill-[#EE7828]"
+                                    d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                            />
+                        </svg>
+                    </button>
+                    <div class="popup__title text-3xl font-bold text-center mb-1">Це модальне вікно №2</div>
+                    <div class="popup__text text-xl">
+                        <a href="#popup" class="section__button-other-one popup-link text-red-700 font-bold">Попап
+                            №1</a>
+                        <p>Незмінно пропонується широкий вибір зберігання даних: кімнатні й садові рослини,
+                            телекомунікації й свіжі овочі та фрукти для стильних особистостей і гостей столиці. </p>
+                        <a href="#image" class="section__button-other-image popup-link  text-red-700 font-bold">Переглянути
+                            зображення</a>
+                        <p>Ми впевнені, що впровадження новаторства (приємні ціни) життєво важливе для розвитку, тому ми
+                            постійно виконуємо зобов'язання та разом з тим, відкриті до безпрограшних домовленостей.
+                            Хочемо вражати киян комфортом накопичення і прагнемо розвивати передачу даних, кабельне
+                            телебачення і пасажирські перевезення разом із нашими партнерами.</p>
+                        <p>Завдяки прогресивним та надійним продуктам та послугам, талановитим співробітникам і
+                            серйозному підходу до харчових продуктів та неперервної інтеграції, а також кооперації з
+                            клієнтами та акціонерами, організація відкриває перед Україною нові фінансово відповідальні
+                            можливості. Одна з ведучих глобальних організацій надає широкий спектр послуг, зокрема
+                            юридичний захист ваших прав, послуги доставлення кореспонденції та ремонт ювелірних виробів
+                            і годинників. Мета товариства проста: це надання вам глобального громадянства, бізнесу та
+                            відкриттів. </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="image"
+             class="modal modal-other-image popup fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-y-auto hidden transition-all duration-500 ease-in">
+            <!--    <a href="#header" class="popup__area"></a>-->
+            <div class="popup__body min-h-full mx-auto flex items-center justify-center py-7 px-3 transition-all duration-800 ease-out delay-0">
+                <div class="popup__content popup__content_image">
+                    <button class="group modal__close">
+                        <svg
+                                id="modal-close-btn"
+                                class="absolute top-10 right-10 h-7 w-7 text-red-700 fill-red-700 cursor-pointer"
+                                viewBox="0 0 28 28"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    class="fill-white cursor-pointer transition-colors group-hover:fill-[#EE7828]"
+                                    d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                            />
+                        </svg>
+                    </button>
+                    <div class="popup__image">
+                        <img src="img/scene-primary.webp" alt="scene">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modals Form -->
+        <div class="modals">
+            <div
+                    id="modal-form-opens"
+                    class="modal modal-form-opens fixed inset-0 text-center bg-black/90 cursor-pointer p-8 overflow-y-auto hidden"
+            >
+                <!-- Modal Замовити консультацію -->
+                <div class="modal__main relative rounded-md bg-white h-[580px] w-[420px] mx-auto mt-40 pt-3">
+                    <form class="max-w-sm mx-auto mt-10">
+                        <label
+                                for="websiteAdminHero"
+                                class="block mb-2 text-sm font-medium text-gray-900 "
+                        >Username</label
+                        >
+                        <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                    >
+                      <path
+                              d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"
+                      />
+                    </svg>
+                  </span>
+                            <input
+                                    type="text"
+                                    required
+                                    id="websiteAdminHero"
+                                    class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Enter Your Name"
+                            >
+                        </div>
+
+                        <label
+                                for="phoneNumber"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >Your phone</label
+                        >
+                        <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                    >
+                      <path
+                              fill-rule="evenodd"
+                              d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4Zm12 12V5H7v11h10Zm-5 1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                              clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+
+                            <input
+                                    type="text"
+                                    required
+                                    id="phoneNumber"
+                                    class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Enter Your phone-number"
+                            >
+                        </div>
+
+                        <label
+                                for="emailAddressIcon"
+                                class="block mb-2 text-sm font-medium text-gray-900 "
+                        >Your Email</label
+                        >
+                        <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 16"
+                    >
+                      <path
+                              d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                      />
+                      <path
+                              d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                      />
+                    </svg>
+                  </span>
+                            <input
+                                    type="text"
+                                    required
+                                    id="emailAddressIcon"
+                                    class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Enter Your Email"
+                            >
+                        </div>
+
+                        <label
+                                for="formProducts"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
+                        >Select your product</label
+                        >
+                        <select
+                                id="formProducts"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        >
+                            <option class="text-[20px]" value="Виберіть продукцію:">
+                                Виберіть продукцію:
+                            </option>
+                            <option class="text-[20px]" value="МАРКІЗИ">МАРКІЗИ</option>
+                            <option
+                                    class="text-[20px]"
+                                    value="&nbsp;&nbsp;Ліктьова маркіза (горизонтальна)"
+                            >
+                                &nbsp;&nbsp;Ліктьова маркіза (горизонтальна)
+                            </option>
+                            <option
+                                    class="text-[20px]"
+                                    value="&nbsp;&nbsp;Балконна маркіза"
+                            >
+                                &nbsp;&nbsp;Балконна маркіза
+                            </option>
+                            <option
+                                    class="text-[20px]"
+                                    value="&nbsp;&nbsp;Коробова маркіза"
+                            >
+                                &nbsp;&nbsp;Коробова маркіза
+                            </option>
+                            <option
+                                    class="text-[20px]"
+                                    value="&nbsp;&nbsp;Терасна маркіза"
+                            >
+                                &nbsp;&nbsp;Терасна маркіза
+                            </option>
+                            <option
+                                    class="text-[20px]"
+                                    value="&nbsp;&nbsp;Вертикальна маркіза"
+                            >
+                                &nbsp;&nbsp;Вертикальна маркіза
+                            </option>
+                            <option
+                                    class="text-[20px]"
+                                    value="&nbsp;&nbsp;Двосторонні маркізи"
+                            >
+                                &nbsp;&nbsp;Двосторонні маркізи
+                            </option>
+                            <option class="text-[20px]" value="М’ЯКІ ВІКНА">
+                                М’ЯКІ ВІКНА
+                            </option>
+
+                            <option class="text-[20px]" value="РЕФЛЕКСОЛІ">
+                                РЕФЛЕКСОЛІ
+                            </option>
+
+                            <option class="text-[20px]" value="ТЕНТИ І НАВІСИ">
+                                ТЕНТИ І НАВІСИ
+                            </option>
+                            <option class="text-[20px]" value="МЕТАЛІЧНІ КОНСТРУКЦІЇ">
+                                МЕТАЛІЧНІ КОНСТРУКЦІЇ
+                            </option>
+                            <option class="text-[20px]" value="ТЕРАСНА ДОШКА ДПК">
+                                ТЕРАСНА ДОШКА ДПК
+                            </option>
+
+                        </select>
+
+                        <label
+                                for="formMessage"
+                                class="block mb-2 text-sm font-medium text-gray-900 "
+                        >Your message</label
+                        >
+                        <textarea
+                                id="formMessage"
+                                rows="4"
+                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Leave a comment..."
+                        ></textarea>
+                        <div>
+                            <input type="submit" value="Відправити"
+                                   class="btn btn-accent mx-auto mt-6 p-4 w-full xl:mx-0 text-white"
+                                   name="send">
+                        </div>
+                    </form>
+                    <!-- Close Btn -->
+                    <button class="group modal__close">
+                        <svg
+                                id="modal-close-btn"
+                                class="absolute top-3 right-3 h-7 w-7 text-red-700 fill-red-700 cursor-pointer"
+                                viewBox="0 0 28 28"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    class="fill-black cursor-pointer transition-colors group-hover:fill-[#EE7828]"
+                                    d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="modal-form-open"
+                 class="modal modal-form-open fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-x-auto overflow-y-hidden hidden transition-all duration-500 ease-in"
+            >
+                <div class="modal__main relative rounded-md bg-white h-[580px] w-[420px] mx-auto mt-40 pt-3">
+                        <form class="max-w-sm mx-auto mt-10">
+                            <label
+                                    for="user-name"
+                                    class="block mb-2 text-sm font-medium text-gray-900 "
+                            >Username</label
+                            >
+                            <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                    >
+                      <path
+                              d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"
+                      />
+                    </svg>
+                  </span>
+                                <input
+                                        type="text"
+                                        required
+                                        id="user-name"
+                                        class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Enter Your Name"
+                                >
+                            </div>
+
+                            <label
+                                    for="phone-number"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >Your phone</label
+                            >
+                            <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                    >
+                      <path
+                              fill-rule="evenodd"
+                              d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4Zm12 12V5H7v11h10Zm-5 1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                              clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+
+                                <input
+                                        type="text"
+                                        required
+                                        id="phone-number"
+                                        class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Enter Your phone-number"
+                                >
+                            </div>
+
+                            <label
+                                    for="email-address"
+                                    class="block mb-2 text-sm font-medium text-gray-900 "
+                            >Your Email</label
+                            >
+                            <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 16"
+                    >
+                      <path
+                              d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                      />
+                      <path
+                              d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                      />
+                    </svg>
+                  </span>
+                                <input
+                                        type="text"
+                                        required
+                                        id="email-address"
+                                        class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Enter Your Email"
+                                >
+                            </div>
+
+                            <label
+                                    for="select-products"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
+                            >Select your product</label
+                            >
+                            <select
+                                    id="select-products"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            >
+                                <option class="text-[20px]" value="Виберіть продукцію:">
+                                    Виберіть продукцію:
+                                </option>
+                                <option class="text-[20px]" value="МАРКІЗИ">МАРКІЗИ</option>
+
+                                <option class="text-[20px]" value="М’ЯКІ ВІКНА">
+                                    М’ЯКІ ВІКНА
+                                </option>
+
+                                <option class="text-[20px]" value="ПАРАСОЛІ">ПАРАСОЛІ</option>
+                                <option class="text-[20px]" value="РЕФЛЕКСОЛІ">
+                                    РЕФЛЕКСОЛІ
+                                </option>
+                                <option class="text-[20px]" value="ПЕРГОЛИ">ПЕРГОЛИ</option>
+                                <option class="text-[20px]" value="СИСТЕМА ВЕРАНДА">
+                                    СИСТЕМА ВЕРАНДА
+                                </option>
+                                <option class="text-[20px]" value="СКЛЯННІ ПЕРЕГОРОДКИ">
+                                    СКЛЯННІ ПЕРЕГОРОДКИ
+                                </option>
+                                <option class="text-[20px]" value="ЛІТНІ МАЙДАНЧИКИ">
+                                    ЛІТНІ МАЙДАНЧИКИ
+                                </option>
+                                <option class="text-[20px]" value="ЗАВІСИ ПВХ">
+                                    ЗАВІСИ ПВХ
+                                </option>
+                                <option class="text-[20px]" value="ТЕНТИ І НАВІСИ">
+                                    ТЕНТИ І НАВІСИ
+                                </option>
+                                <option class="text-[20px]" value="МЕТАЛІЧНІ КОНСТРУКЦІЇ">
+                                    МЕТАЛІЧНІ КОНСТРУКЦІЇ
+                                </option>
+                                <option class="text-[20px]" value="ТЕРАСНА ДОШКА ДПК">
+                                    ТЕРАСНА ДОШКА ДПК
+                                </option>
+                                <option class="text-[20px]" value="ТКАНИНИ">ТКАНИНИ</option>
+                            </select>
+
+                            <label
+                                    for="leave-message"
+                                    class="block mb-2 text-sm font-medium text-gray-900 "
+                            >Your message</label
+                            >
+                            <textarea
+                                    id="leave-message"
+                                    rows="4"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Leave a comment..."
+                            ></textarea>
+                            <div>
+                                <input type="submit" value="Відправити"
+                                       class="btn btn-accent mx-auto mt-6 p-4 w-full xl:mx-0 text-white"
+                                       name="send">
+                            </div>
+                        </form>
+                        <!-- Close Btn -->
+                        <button class="group modal__close">
+                            <svg
+                                    id="modal-close-btn"
+                                    class="absolute top-3 right-3 h-7 w-7 text-red-700 fill-red-700 cursor-pointer"
+                                    viewBox="0 0 28 28"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        class="fill-black cursor-pointer transition-colors group-hover:fill-[#EE7828]"
+                                        d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+            </div>
+
+        </div>
+
+        <!-- [END] Modals Form -->
+        <!-- Кінець блоку з модальними вікнами з посиланнями на інші модальні вікна та посилання на зображення -->
+    </div>
+
+    <footer class="h-[140px] bg-neutral-600 text-white text-center text-3xl mt-[50vh]">Footer</footer>
+</div>
+
+
+<script>
+    const scrollController = {
+        scrollPosition: 0,
+        disabledScroll() {
+            scrollController.scrollPosition = window.scrollY;
+            document.body.style.cssText = `
+            overflow: hidden;
+            position: fixed;
+            top: -${scrollController.scrollPosition}px;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            padding-right: ${window.innerWidth - document.body.offsetWidth}px
+            `;
+            document.documentElement.style.scrollBehavior = 'unset';
+        },
+        enabledScroll() {
+            document.body.style.cssText = '';
+            window.scroll({top: scrollController.scrollPosition})
+            document.documentElement.style.scrollBehavior = '';
+        },
+    }
+
+    const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
+        const buttonElems = document.querySelectorAll(btnOpen);
+        const modalElem = document.querySelector(modal);
+
+        modalElem.style.cssText = `
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity ${time}ms ease-in-out;
+  `;
+
+        const closeModal = event => {
+            const target = event.target;
+
+            if (
+                target === modalElem ||
+                (btnClose && target.closest(btnClose)) ||
+                event.code === 'Escape'
+            ) {
+
+                modalElem.style.opacity = 0;
+
+                setTimeout(() => {
+                    modalElem.style.visibility = 'hidden';
+                    scrollController.enabledScroll();
+                }, time);
+
+                window.removeEventListener('keydown', closeModal);
+            }
+        }
+
+        const openModal = () => {
+            modalElem.style.visibility = 'visible';
+            modalElem.style.opacity = 1;
+            window.addEventListener('keydown', closeModal);
+            scrollController.disabledScroll();
+        };
+
+        buttonElems.forEach(btn => {
+            btn.addEventListener('click', openModal);
+        });
+
+        modalElem.addEventListener('click', closeModal);
+    };
+
+    modalController({
+        modal: '.modal-one',
+        btnOpen: '.section__button-one',
+        btnClose: '.modal__close',
+    });
+
+    modalController({
+        modal: '.modal-two',
+        btnOpen: '.section__button-two',
+        btnClose: '.modal__close'
+    });
+
+    modalController({
+        modal: '.modal-form',
+        btnOpen: '.section__button-form',
+        btnClose: '.modal__close'
+    });
+
+    modalController({
+        modal: '.modal-other-one',
+        btnOpen: '.section__button-other-one',
+        btnClose: '.modal__close'
+    });
+
+    modalController({
+        modal: '.modal-other-two',
+        btnOpen: '.section__button-other-two',
+        btnClose: '.modal__close'
+    });
+
+    modalController({
+        modal: '.modal-other-image',
+        btnOpen: '.section__button-other-image',
+        btnClose: '.modal__close'
+    });
+
+    modalController({
+        modal: '.modal-form-open',
+        btnOpen: '.section__button-form-open',
+        btnClose: '.modal__close'
+    });
+
+</script>
+
+</body>
+</html>

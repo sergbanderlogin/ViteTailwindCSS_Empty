@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Pop-Up (Попапи)</title>
+
+    <style>
+        body.lock {
+            overflow: hidden;
+        }
+
+        .popup.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup.open .popup__content {
+            /*transform: translate(0px, 0px);*/
+            transform: perspective(600px) translate(0px, 00%) rotateX(0deg);
+            opacity: 1;
+        }
+
+
+        .popup__content {
+            transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="wrapper overflow-hidden min-h-screen">
+    <header id="header" class="header lock-padding fixed w-full top-0 left-0 bg-black mb-12">
+        <div class="header__container _container max-w-[1280px] mx-auto h-20 px-4 flex justify-between items-center">
+            <a href="" class="header__logo w-12 h-12 bg-white rounded-full"></a>
+            <a href="" class="text-center text-3xl text-red-500 font-bold">Modal and PopUp!</a>
+            <a href="#popup" class="popup-link text-white text-2xl">Попап №1</a>
+        </div>
+    </header>
+    <h1 class="text-4xl font-bold text-purple-700 text-center underline m-5">Pop-Ups</h1>
+
+    <div class="container mx-auto">
+        <section class="section content__section content__section_row flex bg-amber-100 p-6 mt-10">
+            <div class="content__body grow shrink basis-50% px-5">
+                <h1 class="content__title text-4xl mb-2">Відкриття модальних вікон за посиланням.</h1>
+                <div class="content__text text-[20px]">
+                    <a href="#popup"
+                       class="popup-link text-red-600 font-bold"><span
+                            class="text-neutral-600">Посилання на</span> PopUp №1</a>
+                    <p>Хочемо дивувати домашніх улюбленців якістю неперервної інтеграції та прагнемо розвивати послуги
+                        доставлення кореспонденції, передачу даних і виготовлення ключів разом із замовниками.</p>
+                    <p>Постійне поліпшення, робітнича майстерність, синергетичне поєднання та збільшення асортименту
+                        товарів забезпечили компанії успіх і провідну роль на світовому ринку.</p>
+                    <a href="#popup_2"
+                       class="popup-link text-red-600 font-bold text-xl"><span
+                            class="text-neutral-600">Посилання на</span> PopUp №2</a>
+                    <p>На постійній основі компанія використовує універсальні приємні технології інновацій, відкриттів
+                        та глобального громадянства. Наша мета проста: це надання вам бізнесу, новаторства та
+                        накопичення. </p>
+                    <a href="#image"
+                       class="popup-link text-red-600 font-bold text-xl">Переглянути
+                        зображення</a>
+                    <p>Ми впевнені, що впровадження харчових продуктів (комп'ютерні ціни) життєво необхідне для
+                        розвитку, тому ми постійно виконуємо зобов'язання та разом з тим, відкриті до зберігання даних.
+                    </p>
+                    <p>По цьому постланню можна
+                    <a href="#modal-form"
+                       class="popup-link text-red-600 font-bold text-xl">відкрити модальне вікно з формою</a>
+                    </p>
+                </div>
+
+            </div>
+            <a href="#image"
+               class="content_image popup-link block grow shrink basis-50% section__button section__button-other-image">
+                <img class="max-w-full" src="img/scene-primary.webp" alt="image">
+            </a>
+
+        </section>
+    </div>
+
+    <footer class="h-[140px] bg-neutral-600 text-white text-center text-3xl mt-[50vh]">Footer</footer>
+</div>
+
+<!-- Блок з модальними вікнами з посиланнями на інші модальні вікна та посилання на зображення -->
+<div id="popup"
+     class="popup fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-x-auto overflow-y-hidden invisible transition-all duration-500 ease-in">
+    <!--    <a href="#header" class="popup__area absolute top-0 left-0 w-full h-full"></a>-->
+    <div class="popup__body min-h-full mx-auto flex justify-center items-center py-7 px-3 transition-all duration-800 ease-out delay-0">
+        <div class="popup__content relative bg-white color-black w-[800px] p-7 transition-all duration-300 ease-in-out delay-0 opacity-0">
+            <a href="#header" class="group popup__close close-popup">
+                <svg
+                        id="modal-close-btn"
+                        class="absolute top-3 right-3 h-8 w-8 fill-red-700 cursor-pointer"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                            class="transition-colors group-hover:fill-[#EE7828]"
+                            d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                    />
+                </svg>
+            </a>
+            <div class="popup__title text-3xl font-bold text-center mb-1">Це модальне вікно №1</div>
+            <div class="popup__text text-xl">
+                <a href="#popup_2" class="popup-link text-red-700 font-bold">Попап
+                    №2</a>
+                <p>
+                    Наша мета проста: це забезпечення вам харчовими продуктами, неперервної інтеграції та
+                    глобального громадянства.
+                </p>
+                <a href="#image" class="popup-link text-red-700 font-bold">Переглянути
+                    зображення</a>
+                <p>
+                    Систематичне поліпшення, досвідченість злагодженої команди, управлінська вправність та
+                    збільшення рівня капіталізації забезпечили підприємству успіх і провідну роль на ринку
+                    України. У своїй діяльності підприємство застосовує універсальні сучасні технології бізнесу,
+                    відкриттів та інновацій.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popup_2"
+     class="popup fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-x-auto overflow-y-hidden invisible transition-all duration-500 ease-in">
+    <!--    <a href="#header" class="popup__area absolute top-0 left-0 w-full h-full">-->
+    <div class="popup__body min-h-full mx-auto flex items-center justify-center py-7 px-3 transition-all duration-800 ease-out delay-0">
+        <div class="popup__content relative bg-white color-black w-[800px] p-7 transition-all duration-300 ease-in-out delay-0 opacity-0">
+            <a href="#header" class="group popup__close close-popup">
+                <svg
+                        id="modal-close-btn"
+                        class="absolute top-3 right-3 h-8 w-8 fill-red-700 cursor-pointer"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                            class="transition-colors group-hover:fill-[#EE7828]"
+                            d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                    />
+                </svg>
+            </a>
+            <div class="popup__title text-3xl font-bold text-center mb-1">Це модальне вікно №2</div>
+            <div class="popup__text text-xl">
+                <a href="#popup" class="popup-link text-red-700 font-bold">Попап
+                    №1</a>
+                <p>Незмінно пропонується широкий вибір зберігання даних: кімнатні й садові рослини,
+                    телекомунікації й свіжі овочі та фрукти для стильних особистостей і гостей столиці. </p>
+                <a href="#image" class="popup-link  text-red-700 font-bold">Переглянути
+                    зображення</a>
+                <p>Ми впевнені, що впровадження новаторства (приємні ціни) життєво важливе для розвитку, тому ми
+                    постійно виконуємо зобов'язання та разом з тим, відкриті до безпрограшних домовленостей.
+                    Хочемо вражати киян комфортом накопичення і прагнемо розвивати передачу даних, кабельне
+                    телебачення і пасажирські перевезення разом із нашими партнерами.</p>
+                <p>Завдяки прогресивним та надійним продуктам та послугам, талановитим співробітникам і
+                    серйозному підходу до харчових продуктів та неперервної інтеграції, а також кооперації з
+                    клієнтами та акціонерами, організація відкриває перед Україною нові фінансово відповідальні
+                    можливості. Одна з ведучих глобальних організацій надає широкий спектр послуг, зокрема
+                    юридичний захист ваших прав, послуги доставлення кореспонденції та ремонт ювелірних виробів
+                    і годинників. Мета товариства проста: це надання вам глобального громадянства, бізнесу та
+                    відкриттів. </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="image"
+     class="popup fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-x-auto overflow-y-hidden invisible transition-all duration-500 ease-in">
+    <!--    <a href="#header" class="popup__area absolute top-0 left-0 w-full h-full">-->
+    <div class="popup__body min-h-full mx-auto flex items-center justify-center py-7 px-3 transition-all duration-800 ease-out delay-0">
+        <div class="popup__content popup__content_image  relative bg-white color-black w-[80%] p-0 transition-all duration-300 ease-in-out delay-0 opacity-0">
+            <a href="#header" class="group popup__close close-popup">
+                <svg
+                        id="modal-close-btn"
+                        class="absolute top-5 right-5 h-7 w-7 fill-red-700 cursor-pointer"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                            class="transition-colors group-hover:fill-[#EE7828]"
+                            d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                    />
+                </svg>
+            </a>
+            <div class="popup__image max-x-[100%] align-top">
+                <img src="img/scene-primary.webp" alt="scene">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals Form -->
+<div id="modal-form"
+     class="popup fixed inset-0 text-center bg-black/80 cursor-pointer p-8 overflow-x-auto overflow-y-hidden invisible transition-all duration-500 ease-in"
+>
+    <div class="popup__body min-h-full mx-auto flex items-center justify-center py-7 px-3 transition-all duration-800 ease-out delay-0">
+        <div class="popup__content relative bg-white color-black h-[580px] w-[420px] p-7 transition-all duration-300 ease-in-out delay-0 opacity-0">
+            <a href="#header" class="group popup__close close-popup">
+                <svg
+                        id="modal-close-btn"
+                        class="absolute top-3 right-3 h-8 w-8 fill-red-700 cursor-pointer"
+                        viewBox="0 0 28 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                            class="transition-colors group-hover:fill-[#EE7828]"
+                            d="M17.3145 13.9999L26.5918 4.72257C27.0321 4.28305 27.2798 3.68662 27.2804 3.06449C27.2809 2.44236 27.0343 1.84549 26.5948 1.40519C26.1552 0.964888 25.5588 0.717221 24.9367 0.716672C24.3145 0.716122 23.7177 0.962735 23.2774 1.40226L14 10.6796L4.72269 1.40226C4.28239 0.961958 3.68522 0.7146 3.06254 0.7146C2.43986 0.7146 1.84268 0.961958 1.40238 1.40226C0.96208 1.84256 0.714722 2.43974 0.714722 3.06242C0.714722 3.68509 0.96208 4.28227 1.40238 4.72257L10.6797 13.9999L1.40238 23.2773C0.96208 23.7176 0.714722 24.3147 0.714722 24.9374C0.714722 25.5601 0.96208 26.1573 1.40238 26.5976C1.84268 27.0379 2.43986 27.2852 3.06254 27.2852C3.68522 27.2852 4.28239 27.0379 4.72269 26.5976L14 17.3202L23.2774 26.5976C23.7177 27.0379 24.3149 27.2852 24.9375 27.2852C25.5602 27.2852 26.1574 27.0379 26.5977 26.5976C27.038 26.1573 27.2854 25.5601 27.2854 24.9374C27.2854 24.3147 27.038 23.7176 26.5977 23.2773L17.3145 13.9999Z"
+                    />
+                </svg>
+            </a>
+            <form class="max-w-sm mx-auto mt-10">
+                <label
+                        for="website-admin-hero"
+                        class="block mb-2 text-sm font-medium text-gray-900 "
+                >Username</label
+                >
+                <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                    >
+                      <path
+                              d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"
+                      />
+                    </svg>
+                  </span>
+                    <input
+                            type="text"
+                            required
+                            id="website-admin-hero"
+                            class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Enter Your Name"
+                    >
+                </div>
+
+                <label
+                        for="phone-number"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Your phone</label
+                >
+                <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                    >
+                      <path
+                              fill-rule="evenodd"
+                              d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4Zm12 12V5H7v11h10Zm-5 1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+                              clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+
+                    <input
+                            type="text"
+                            required
+                            id="phone-number"
+                            class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Enter Your phone-number"
+                    >
+                </div>
+
+                <label
+                        for="email-address-icon"
+                        class="block mb-2 text-sm font-medium text-gray-900 "
+                >Your Email</label
+                >
+                <div class="flex">
+                  <span
+                          class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md  dark:text-gray-400 dark:border-gray-600"
+                  >
+                    <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 20 16"
+                    >
+                      <path
+                              d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+                      />
+                      <path
+                              d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+                      />
+                    </svg>
+                  </span>
+                    <input
+                            type="text"
+                            required
+                            id="email-address-icon"
+                            class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Enter Your Email"
+                    >
+                </div>
+
+                <label
+                        for="products"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
+                >Select your product</label
+                >
+                <select
+                        id="products"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                    <option class="text-[20px]" value="Виберіть продукцію:">
+                        Виберіть продукцію:
+                    </option>
+                    <option class="text-[20px]" value="МАРКІЗИ">МАРКІЗИ</option>
+
+                    <option class="text-[20px]" value="М’ЯКІ ВІКНА">
+                        М’ЯКІ ВІКНА
+                    </option>
+
+                    <option class="text-[20px]" value="ПАРАСОЛІ">ПАРАСОЛІ</option>
+                    <option class="text-[20px]" value="РЕФЛЕКСОЛІ">
+                        РЕФЛЕКСОЛІ
+                    </option>
+                    <option class="text-[20px]" value="ПЕРГОЛИ">ПЕРГОЛИ</option>
+                    <option class="text-[20px]" value="СИСТЕМА ВЕРАНДА">
+                        СИСТЕМА ВЕРАНДА
+                    </option>
+                    <option class="text-[20px]" value="СКЛЯННІ ПЕРЕГОРОДКИ">
+                        СКЛЯННІ ПЕРЕГОРОДКИ
+                    </option>
+                    <option class="text-[20px]" value="ЛІТНІ МАЙДАНЧИКИ">
+                        ЛІТНІ МАЙДАНЧИКИ
+                    </option>
+                    <option class="text-[20px]" value="ЗАВІСИ ПВХ">
+                        ЗАВІСИ ПВХ
+                    </option>
+                    <option class="text-[20px]" value="ТЕНТИ І НАВІСИ">
+                        ТЕНТИ І НАВІСИ
+                    </option>
+                    <option class="text-[20px]" value="МЕТАЛІЧНІ КОНСТРУКЦІЇ">
+                        МЕТАЛІЧНІ КОНСТРУКЦІЇ
+                    </option>
+                    <option class="text-[20px]" value="ТЕРАСНА ДОШКА ДПК">
+                        ТЕРАСНА ДОШКА ДПК
+                    </option>
+                    <option class="text-[20px]" value="ТКАНИНИ">ТКАНИНИ</option>
+                </select>
+
+                <label
+                        for="message"
+                        class="block mb-2 text-sm font-medium text-gray-900 "
+                >Your message</label
+                >
+                <textarea
+                        id="message"
+                        rows="4"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Leave a comment..."
+                ></textarea>
+                <div>
+                    <input type="submit" value="Відправити"
+                           class="btn btn-accent mx-auto mt-6 p-4 w-full xl:mx-0 text-white"
+                           name="send">
+                </div>
+            </form>
+            <!-- Close Btn -->
+
+        </div>
+    </div>
+</div>
+<!-- [END] Modals Form -->
+
+<!-- Кінець блоку з модальними вікнами з посиланнями на інші модальні вікна та посилання на зображення -->
+
+<script>
+    const popupLinks = document.querySelectorAll('.popup-link');
+    const body = document.querySelector('body');
+    const lockPadding = document.querySelectorAll('.lock-padding');
+
+    let unlock = true;
+
+    const timout = 300;
+
+    if (popupLinks.length > 0) {
+        for (let index = 0; index < popupLinks.length; index++) {
+            const popupLink = popupLinks[index];
+            popupLink.addEventListener('click', function (e) {
+                const popupName = popupLink.getAttribute('href').replace('#', '');
+                const currentPopup = document.getElementById(popupName);
+                popupOpen(currentPopup);
+                e.preventDefault();
+            });
+        }
+    }
+
+    const popupCloseIcon = document.querySelectorAll('.close-popup');
+    if (popupCloseIcon.length > 0) {
+        for (let index = 0; index < popupCloseIcon.length; index++) {
+            const e1 = popupCloseIcon[index];
+            e1.addEventListener('click', function (e) {
+                popupClose(e1.closest('.popup'));
+                e.preventDefault();
+            });
+        }
+    }
+
+    function popupOpen(currentPopup) {
+        if (currentPopup && unlock) {
+            const popupActive = document.querySelector('.popup.open');
+            if (popupActive) {
+                popupClose(popupActive, false);
+            } else {
+                bodyLock();
+            }
+            currentPopup.classList.add('open');
+            currentPopup.addEventListener('click', function (e) {
+                if (!e.target.closest('.popup__content')) {
+                    popupClose(e.target.closest('.popup'))
+                }
+            });
+        }
+    }
+
+    function popupClose(popupActive, doUnLock = true) {
+        if (unlock) {
+            popupActive.classList.remove('open');
+            if (doUnLock) {
+                bodyUnLock();
+            }
+        }
+    }
+
+    function bodyLock() {
+        const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+
+        if (lockPadding.length > 0) {
+            for (let index = 0; index < lockPadding.length; index++) {
+                const e1 = lockPadding[index];
+                e1.style.paddingRight = lockPaddingValue;
+            }
+        }
+        body.style.paddingRight = lockPaddingValue;
+        body.classList.add('lock');
+
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timout);
+    }
+
+    function bodyUnLock() {
+        setTimeout(function () {
+            if (lockPadding.length > 0) {
+                for (let index = 0; index < lockPadding.length; index++) {
+                    const e1 = lockPadding[index];
+                    e1.style.paddingRight = '0px';
+                }
+            }
+            body.style.paddingRight = '0px';
+            body.classList.remove('lock');
+        }, timout);
+
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timout);
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.which === 27) {
+            const popupActive = document.querySelector('.popup.open');
+            popupClose(popupActive);
+        }
+    });
+
+</script>
+
+</body>
+</html>

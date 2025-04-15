@@ -98,4 +98,20 @@
     @apply rotate-180;
 }
 
+/* === для Pop-Up (Попапи) (файл popups.html) === */
+/*.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
 
+.popup.open .popup__content {
+    !*transform: translate(0px, 0px);*!
+    transform: perspective(600px) translate(0px, 00%) rotateX(0deg);
+    opacity: 1;
+}
+
+
+.popup__content {
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}*/
+/* === Кінець блоку властивостей для Pop-Up (Попапи) (файл popups.html) === */
